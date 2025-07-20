@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <!-- 显示地图的 MapView -->
-    <com.amap.api.maps.MapView
-        android:id="@+id/map_view"
+    <!-- TabLayout -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#FF4081"
+        app:tabTextColor="#666666"
+        app:tabSelectedTextColor="#FF4081" />
+
+    <!-- ViewPager -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <!-- 触发导航的按钮 -->
-    <Button
-        android:id="@+id/start_navi_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="开始导航"
-        android:backgroundTint="#FF5722"
-        android:textColor="@android:color/white" />
-
-</RelativeLayout>
+</LinearLayout>
